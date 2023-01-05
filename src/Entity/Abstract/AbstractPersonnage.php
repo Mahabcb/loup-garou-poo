@@ -10,8 +10,9 @@ abstract class AbstractPersonnage{
     protected bool $enCouple;
     protected string $marieAvec;
 
-    public function __construct()
+    public function __construct(string $name)
     {
+        $this->name = $name;
         $this->enVie = true;
         $this->estReveille = true;
         $this->enCouple = false;
@@ -21,11 +22,6 @@ abstract class AbstractPersonnage{
     public function getName(): ?string
     {
         return $this->name;
-    }
- 
-    public function setName($name)
-    {
-        $this->name = $name;
     }
  
     public function getenVie(): ?bool

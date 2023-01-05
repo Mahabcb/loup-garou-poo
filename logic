@@ -11,9 +11,9 @@ Les personnages : => les entités
 
 Les actions que les perso peuvent faire : => les méthodes
 
-- Dormir : tout le monde vivant 
-- Accuser : tout le monde vivant
-- Tuer : chasseur, sorciere, loup-garous
+- Dormir : tout le monde vivant  ok 
+- Accuser : tout le monde vivant ok
+- Tuer($personnage = null) : chasseur, sorciere, loup-garous
 - marier(perso1? perso2) : cupidon => perso1->encouple = true , perso2->enCouple = true
 - ressuciter : sorciere 
 - voirLaNuit : la petite fille
@@ -28,3 +28,9 @@ Les propriétés :
 - sontReveillés : tout le monde
 
 TODO : recuperer le conjoint
+    : election du maire en cas de ex aequo
+
+Déroulement du jeu :
+
+- On commence par élire un maire 
+- tout le monde s'endort
