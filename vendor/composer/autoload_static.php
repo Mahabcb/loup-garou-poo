@@ -62,6 +62,13 @@ class ComposerStaticInit778d237e7e7a4bc38d1ea4640e635c40
     );
 
     public static $classMap = array (
+        'App\\Controller\\Abstract\\AbstractController' => __DIR__ . '/../..' . '/src/Controller/Abstract/AbstractController.php',
+        'App\\Controller\\CupidonController' => __DIR__ . '/../..' . '/src/Controller/CupidonController.php',
+        'App\\Entity\\Abstract\\AbstractPersonnage' => __DIR__ . '/../..' . '/src/Entity/Abstract/AbstractPersonnage.php',
+        'App\\Entity\\Chasseur' => __DIR__ . '/../..' . '/src/Entity/Chasseur.php',
+        'App\\Entity\\Cupidon' => __DIR__ . '/../..' . '/src/Entity/Cupidon.php',
+        'App\\Entity\\LaSorciere' => __DIR__ . '/../..' . '/src/Entity/LaSorciere.php',
+        'App\\Interface\\ElectionInterface' => __DIR__ . '/../..' . '/src/Interface/ElectionInterface.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity\Abstract;
+namespace App\Controller\Abstract;
 
 use Exception;
 use App\Entity\Abstract\AbstractPersonnage;
@@ -10,6 +10,11 @@ abstract class AbstractController extends AbstractPersonnage
     public function dormir() : string
     {
         return "Tout le monde dort";
+    }
+
+    public function ElireLeMaire(AbstractPersonnage $maire) : string
+    {
+        return $maire->getName();
     }
 
     public function accuser(AbstractPersonnage $accuse) : ?string 
@@ -23,10 +28,10 @@ abstract class AbstractController extends AbstractPersonnage
 
     public function tuer(AbstractPersonnage $victime)
     {
-        // si on est vivant on peut tuer un personnage
-        // ca aura pour consequence que $victime->enVie = false
         if($this->enVie === true){
             $victime->enVie = false;
+            $partenaire = $victime->getPartenaire();
+            $partenaire->enVie = false;
         }
     }
 }

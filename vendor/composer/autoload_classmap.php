@@ -6,6 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\Abstract\\AbstractController' => $baseDir . '/src/Controller/Abstract/AbstractController.php',
+    'App\\Controller\\CupidonController' => $baseDir . '/src/Controller/CupidonController.php',
+    'App\\Entity\\Abstract\\AbstractPersonnage' => $baseDir . '/src/Entity/Abstract/AbstractPersonnage.php',
+    'App\\Entity\\Chasseur' => $baseDir . '/src/Entity/Chasseur.php',
+    'App\\Entity\\Cupidon' => $baseDir . '/src/Entity/Cupidon.php',
+    'App\\Entity\\LaSorciere' => $baseDir . '/src/Entity/LaSorciere.php',
+    'App\\Interface\\ElectionInterface' => $baseDir . '/src/Interface/ElectionInterface.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'DeepCopy\\DeepCopy' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
     'DeepCopy\\Exception\\CloneException' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',

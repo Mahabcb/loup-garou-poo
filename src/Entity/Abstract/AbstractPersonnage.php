@@ -7,15 +7,12 @@ abstract class AbstractPersonnage{
     protected string $name;
     protected bool $enVie;
     protected bool $estReveille;
-    protected bool $enCouple;
-    protected string $marieAvec;
+    protected AbstractPersonnage $enCouple;
 
-    public function __construct(string $name)
+    public function __construct()
     {
-        $this->name = $name;
         $this->enVie = true;
         $this->estReveille = true;
-        $this->enCouple = false;
     }
 
  
@@ -29,13 +26,25 @@ abstract class AbstractPersonnage{
         return $this->enVie;
     }
  
-    public function getenCouple(): ?bool
-    {
-        return $this->enCouple;
-    }
- 
     public function getestReveille(): ?bool
     {
         return $this->estReveille;
+    }
+
+    public function getPartenaire(): ?AbstractPersonnage
+    {
+        return $this->enCouple;
+    }
+
+    /**
+     * Set the value of enCouple
+     *
+     * @return  self
+     */ 
+    public function setEnCouple(AbstractPersonnage $abstractPersonnage) : self
+    {
+        $this->enCouple = $abstractPersonnage;
+
+        return $this;
     }
 }

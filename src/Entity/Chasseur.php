@@ -6,18 +6,13 @@ use App\Interface\ElectionInterface;
 use App\Entity\Abstract\AbstractPersonnage;
 use Exception;
 
-class Chasseur extends AbstractPersonnage implements ElectionInterface{
+class Chasseur extends AbstractPersonnage{
 
-    public function ElireLeMaire(AbstractPersonnage $maire) : string
+    public function __construct()
     {
-        return $maire->getName();
+        parent::__construct();
+        $this->name = "Chasseur";
     }
 
-    public function tuer(string $name) : string
-    {
-        if($this->enVie === false){
-            return $name;
-        }
-        throw new Exception("Tu n'est pas mort, tu ne peux pas tuer quelqu'un !");
-    }
+    
 }
