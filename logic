@@ -1,0 +1,30 @@
+Les personnages : => les entités
+
+- Loup Garou
+- La Sorciere
+- Villageois
+- Cupidon
+- Voyante
+- Chasseur 
+- Petite fille
+- Le maire
+
+Les actions que les perso peuvent faire : => les méthodes
+
+- Dormir : tout le monde vivant 
+- Accuser : tout le monde vivant
+- Tuer : chasseur, sorciere, loup-garous
+- marier(perso1? perso2) : cupidon => perso1->encouple = true , perso2->enCouple = true
+- ressuciter : sorciere 
+- voirLaNuit : la petite fille
+- voirLaCarte
+- estEluMaire : au debut ce sera false => true apres le vote
+- voteLeMaire($personnage)
+
+Les propriétés :
+- un nom : tout le monde
+- enVie : tout le monde
+- estMarié : tout le monde
+- sontReveillés : tout le monde
+
+TODO : recuperer le conjoint
