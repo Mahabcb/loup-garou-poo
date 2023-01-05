@@ -14,9 +14,7 @@ class ChasseurController extends AbstractController{
     {
         $this->chasseur = $chasseur;
     }
-
     
-
     public function tuerParChasseur(AbstractPersonnage $vicime) : string
     {
         // on doit vérifier qu'il est mort

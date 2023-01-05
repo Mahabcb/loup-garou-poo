@@ -11,6 +11,4 @@ final class LaSorciere extends AbstractPersonnage{
         parent::__construct();
         $this->name = "La Sorcière";
     }
-
-
 }
