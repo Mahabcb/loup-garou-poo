@@ -5,7 +5,7 @@ namespace App\Controller\Abstract;
 use Exception;
 use App\Entity\Abstract\AbstractPersonnage;
 
-abstract class AbstractController extends AbstractPersonnage 
+abstract class AbstractController extends AbstractPersonnage
 {
     protected array $tabMorts;
     protected array $bancsDesAccuses;
@@ -39,10 +39,10 @@ abstract class AbstractController extends AbstractPersonnage
 
     public function accuser(AbstractPersonnage $accuse) : ?string 
     {
-       if($this->enVie()){
+        if($this->enVie()) {
             $this->bancsDesAccuses[] = $accuse;
             return "Tu as bien été accusé";
-       }
+        }
         throw new Exception("Tu es mort, tu ne peux pas accuser quelqu'un !");
         exit();
     }

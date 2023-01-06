@@ -3,7 +3,8 @@
 namespace App\Interface;
 use App\Entity\Abstract\AbstractPersonnage;
 
-interface ElectionInterface{
+interface ElectionInterface
+{
     public function ElireLeMaire(AbstractPersonnage $maire) : string;
 }
 

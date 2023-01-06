@@ -6,7 +6,8 @@ use App\Interface\ElectionInterface;
 use App\Entity\Abstract\AbstractPersonnage;
 use Exception;
 
-class Chasseur extends AbstractPersonnage{
+class Chasseur extends AbstractPersonnage
+{
 
     public function __construct()
     {

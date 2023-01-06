@@ -4,7 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Abstract\AbstractPersonnage;
 
-final class Voyante extends AbstractPersonnage {
+final class Voyante extends AbstractPersonnage
+{
 
     public function __construct()
     {

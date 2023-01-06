@@ -13,7 +13,8 @@ use App\Controller\Abstract\AbstractController;
  * la class doit obligatoirement implémenter la fonction tuer
  * quand on joue la sorciere on a un bouton kill
  */
-final class LaSorciereController extends AbstractController implements KillerInterface{
+final class LaSorciereController extends AbstractController implements KillerInterface
+{
 
     private $laSorciere;
     public function __construct(LaSorciere $laSorciere)
@@ -38,13 +39,13 @@ final class LaSorciereController extends AbstractController implements KillerInt
     // on vérifie qu'elle n'a pas déjà utilisé son pouvoir
     public function tuer(?AbstractPersonnage $victime = null) // chassseur sorciere et loup garou
     {
-        if(isset($victime) and $victime !== $this and $this->enVie()){ // on verifie que y a une victime, et que la victime n'est pas le tueur et qu'on est en vie
+        if(isset($victime) and $victime !== $this and $this->enVie()) { // on verifie que y a une victime, et que la victime n'est pas le tueur et qu'on est en vie
                 $victime->enVie = false; // on tue la victime
                 $this->tabMorts[] = $victime; // on ajoute la victime au tableau des morts
                 // cas du partenaire
-                if($victime->getPartenaire() !== null){ // si la victime a un partenaire
-                    $this->tuerLePartenaire($victime); // on tue le partenaire
-                }
+            if($victime->getPartenaire() !== null) { // si la victime a un partenaire
+                $this->tuerLePartenaire($victime); // on tue le partenaire
+            }
             throw new Exception("Si tu es mort tu ne peux pas tuer quelqu'un, et tu ne peux pas non plus de tuer !" . PHP_EOL);
         }
         return null;

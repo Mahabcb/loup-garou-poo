@@ -2,7 +2,8 @@
 
 namespace App\Entity\Abstract;
 
-abstract class AbstractPersonnage{
+abstract class AbstractPersonnage
+{
 
     protected string $name;
     protected bool $enVie;
@@ -42,7 +43,7 @@ abstract class AbstractPersonnage{
     /**
      * Set the value of enCouple
      *
-     * @return  self
+     * @return self
      */ 
     public function setEnCouple(AbstractPersonnage $abstractPersonnage) : self
     {

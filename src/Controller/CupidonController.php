@@ -7,7 +7,8 @@ use App\Interface\KillerInterface;
 use App\Entity\Abstract\AbstractPersonnage;
 use App\Controller\Abstract\AbstractController;
 
-class CupidonController extends AbstractController implements KillerInterface{
+class CupidonController extends AbstractController implements KillerInterface
+{
 
     private $cupidon;
     public function __construct(Cupidon $cupidon)
@@ -22,7 +23,7 @@ class CupidonController extends AbstractController implements KillerInterface{
 
     public function marier(AbstractPersonnage $personnage1, AbstractPersonnage $personnage2) : string
     {
-        if($personnage1->enVie and $personnage2->enVie){
+        if($personnage1->enVie and $personnage2->enVie) {
             $personnage1->setEnCouple($personnage2);
             $personnage2->setEnCouple($personnage1);
             return print_r($personnage1->getName() . " et " . $personnage2->getName() . " sont mariés" . PHP_EOL);

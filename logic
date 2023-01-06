@@ -46,3 +46,10 @@ objet3->accuse($personnage2) -> []
 
 
 $bancDesAccuses = [$personnage1, $personnage1, $personnage2]
+
+
+les outils pour faire du clean code :
+- phpunit = tests unitaire
+- phpcs = standard d'écriture de code php
+- php stan
+- php psalm

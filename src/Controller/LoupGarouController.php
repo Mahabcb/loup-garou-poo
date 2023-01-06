@@ -8,7 +8,8 @@ use App\Interface\KillerInterface;
 use App\Entity\Abstract\AbstractPersonnage;
 use App\Controller\Abstract\AbstractController;
 
-final class LoupGarouController extends AbstractController implements KillerInterface{
+final class LoupGarouController extends AbstractController implements KillerInterface
+{
 
     private $loupGarou;
     public function __construct(LoupGarou $loupGarou)
@@ -18,9 +19,9 @@ final class LoupGarouController extends AbstractController implements KillerInte
     
     public function tuer(AbstractPersonnage $victime)
     {
-        if(isset($victime) and $victime !== $this and $victime->enVie){ // on verifie que y a une victime, et que la victime n'est pas le tueur et qu'on est en vie
+        if(isset($victime) and $victime !== $this and $victime->enVie) { // on verifie que y a une victime, et que la victime n'est pas le tueur et qu'on est en vie
                    // cas du partenaire
-            if($victime->getPartenaire() !== null){ // si la victime a un partenaire
+            if($victime->getPartenaire() !== null) { // si la victime a un partenaire
                 $this->tuerLePartenaire($victime); // on tue le partenaire
                 $this->cimetiere($victime); // on ajoute la victime au tableau des morts
                 return print_r($victime->getName() . " et son partenaire " . $victime->getPartenaire()->getName() ." sont morts !" . PHP_EOL);
