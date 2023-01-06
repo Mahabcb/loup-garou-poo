@@ -36,6 +36,7 @@ $voyanteController = new VoyanteController($voyante);
 $maire = new LeMaire();
 $maireController = new LeMaireController($maire);
 
+
 $chasseurController->dormir(); // a modifer
 
 $loupGarouController->seReveiller($loupGarou); // a modifer
@@ -44,8 +45,12 @@ $loupGarouController2->seReveiller($loupGarou2); // a modifer
 $cupidonController->seReveiller($cupidon); // a modifer
 $cupidonController->marier($chasseur, $voyante); // a modifer
 
-
-
 $loupGarouController->tuer($chasseur); // a modifer
+$cupidonController->tuer($chasseur); // a modifer
 
-dd($chasseur->getTabMort()); // a modifer
+$voyanteController->voirLaCarte($loupGarou); // a modifer
+
+$sorciereController->ressussiter($chasseur); // a modifer
+
+
+

@@ -7,6 +7,21 @@ use App\Entity\Abstract\AbstractPersonnage;
 
 abstract class AbstractController extends AbstractPersonnage 
 {
+    protected array $tabMorts;
+    protected array $bancsDesAccuses;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->bancsDesAccuses = [];
+        $this->tabMorts = [];
+    }
+
+    public function getTabMorts() : array
+    {
+        return $this->tabMorts;
+    }
+
     public function dormir() : string
     {
         return print_r('Tout le monde dort'. PHP_EOL);
@@ -40,8 +55,9 @@ abstract class AbstractController extends AbstractPersonnage
 
     protected function cimetiere(AbstractPersonnage $victime) 
     {
-        $victime->enVie(false);
+        $victime->enVie = false;
         $this->tabMorts[] = $victime;
+        return $this->tabMorts;
     }
 
     protected function getPersonnageAccuse(array $bancsDesAccuses)

@@ -3,10 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Cupidon;
+use App\Interface\KillerInterface;
 use App\Entity\Abstract\AbstractPersonnage;
 use App\Controller\Abstract\AbstractController;
 
-class CupidonController extends AbstractController{
+class CupidonController extends AbstractController implements KillerInterface{
 
     private $cupidon;
     public function __construct(Cupidon $cupidon)
@@ -26,5 +27,11 @@ class CupidonController extends AbstractController{
             $personnage2->setEnCouple($personnage1);
             return print_r($personnage1->getName() . " et " . $personnage2->getName() . " sont mariés" . PHP_EOL);
         }
+    }
+
+    public function tuer(AbstractPersonnage $victime) 
+    {
+        $victime->enVie = false;
+        $this->tabMorts[] = $victime;
     }
 }

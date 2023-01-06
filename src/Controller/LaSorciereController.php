@@ -18,28 +18,22 @@ final class LaSorciereController extends AbstractController implements KillerInt
     private $laSorciere;
     public function __construct(LaSorciere $laSorciere)
     {
+        parent::__construct();
         $this->laSorciere = $laSorciere;
     }
 
-    public function ressussiter(AbstractPersonnage $dernierMort)
+    public function ressussiter(AbstractPersonnage $mort)
     {
-        // on réssussite une personne morte obligatoirement
-        // si la sorciere décide de réssusiter elle doit
-        // réssussiter la derniere personnes du tableau des morts
-        $dernierMort = end($this->tabMorts);
-        
-        if($dernierMort->getPartenaire() !== null){
-            $dernierMort->enVie = true;
-            $dernierMort->getPartenaire()->enVie = true;
-            print_r('Le joueur ' . $dernierMort->getNom() . "," . $dernierMort->getPartenaire()->getNom().  ' est ressuscité!!!' . PHP_EOL);
-            $this->tabMorts = array_diff($this->tabMorts, [$dernierMort, $dernierMort->getPartenaire()]);
+        if($mort->getPartenaire()) {
+            $mort->enVie = true;
+            $mort->getPartenaire()->enVie = true;
+            print_r('Le joueur ' . $mort->getName() . " et " . $mort->getPartenaire()->getName().  ' ont ressuscité!!!' . PHP_EOL);
+            $this->tabMorts = array_diff($this->tabMorts, [$mort, $mort->getPartenaire()]);
         }else{
-            $dernierMort->enVie = true;
-            print_r('Le joueur ' . $dernierMort->getPartenaire()->name . ' est ressuscité!!!' . PHP_EOL);
-            $this->tabMorts = array_diff($this->tabMorts, [$dernierMort]);
-            // TODO : on teste aussi avec array_splice($this->tabMorts, 0, -2)
+            $mort->enVie = true;
+            print_r('Le joueur ' . $mort->getName() . ' a ressuscité!!!' . PHP_EOL);
+            $this->tabMorts = array_diff($this->tabMorts, [$mort]);
         }
-    
     }
     // on vérifie qu'elle n'a pas déjà utilisé son pouvoir
     public function tuer(?AbstractPersonnage $victime = null) // chassseur sorciere et loup garou
