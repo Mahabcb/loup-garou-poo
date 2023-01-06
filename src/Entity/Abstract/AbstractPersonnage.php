@@ -8,18 +8,19 @@ abstract class AbstractPersonnage
     protected string $name;
     protected bool $enVie;
     protected bool $estReveille;
-    protected AbstractPersonnage $enCouple;
+    protected ?AbstractPersonnage $enCouple;
     // un tableau vide / a chaque fois qu'une personne 
     // meurt on appelle ce tableau
     // et on rajoute la personne qui est morte dedans
 
     public function __construct()
     {
+        $this->name = "Personnage";
+        $this->enCouple = null;
         $this->enVie = true;
         $this->estReveille = true;
     }
 
- 
     public function getName(): ?string
     {
         return $this->name;
@@ -52,7 +53,7 @@ abstract class AbstractPersonnage
         return $this;
     }
 
-    protected function enVie() : bool
+    public function enVie() : bool
     {
         return $this->enVie;
     }

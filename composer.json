@@ -14,7 +14,8 @@
     "require": {
         "symfony/var-dumper": "^6.2",
         "phpunit/phpunit": "^9.5",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "phpunit/php-code-coverage": "^9.2"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.9",

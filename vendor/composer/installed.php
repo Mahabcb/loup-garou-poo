@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0069fe9c31dc780164fca88d2231d9cafeb1431a',
+        'reference' => 'a8ed9ef2e38b4190df37d034807ba2a01e7f0082',
         'name' => 'maha/loup-garou-poo',
         'dev' => true,
     ),
@@ -115,7 +115,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0069fe9c31dc780164fca88d2231d9cafeb1431a',
+            'reference' => 'a8ed9ef2e38b4190df37d034807ba2a01e7f0082',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
