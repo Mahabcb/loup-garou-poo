@@ -8,6 +8,10 @@ abstract class AbstractPersonnage{
     protected bool $enVie;
     protected bool $estReveille;
     protected AbstractPersonnage $enCouple;
+    protected array $tabMorts = [];
+    // un tableau vide / a chaque fois qu'une personne 
+    // meurt on appelle ce tableau
+    // et on rajoute la personne qui est morte dedans
 
     public function __construct()
     {

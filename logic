@@ -29,4 +29,6 @@ Les propriétés :
 
 TODO : recuperer le conjoint
     : election du maire en cas de ex aequo
-    : tuer par le chasseur : revoir la logique
+    : les tueurs ne peuvent pas se tuer eux meme 
+    : est ce que pour tuer : interface ? function abstraite ? condition selon l'instance
+    : créer un tableau d'une personne morte
