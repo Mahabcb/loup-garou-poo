@@ -16,7 +16,6 @@ Les actions que les perso peuvent faire : => les méthodes
 - Tuer($personnage = null) : chasseur, sorciere, loup-garous
 - marier(perso1? perso2) : cupidon => perso1->encouple = true , perso2->enCouple = true
 - ressuciter : sorciere 
-- voirLaNuit : la petite fille
 - voirLaCarte  ??? 
 - estEluMaire : au debut ce sera false => true apres le vote
 - voteLeMaire($personnage)
@@ -27,8 +26,23 @@ Les propriétés :
 - estMarié : tout le monde
 - sontReveillés : tout le monde
 
-TODO : recuperer le conjoint
+TODO 
     : election du maire en cas de ex aequo
-    : les tueurs ne peuvent pas se tuer eux meme 
-    : est ce que pour tuer : interface ? function abstraite ? condition selon l'instance
-    : créer un tableau d'une personne morte
+    : vérifier que la sorciere n'a pas encore utiliser son pouvoir de tuer
+
+// les accusation : 
+on a une méthode accuser()
+on veut avoir un tableau qui liste toutes les personnes 
+qui sont accusées par les personnages
+
+on utlise une fonction php qui itére sur ce tableau et 
+va nous ressortir l'objet(le personnage) qui ressort le plus
+et on elemine ce dernier
+ensuite il devra dévoiler sa carte 
+
+$objet->acccuse($personnage1) -> []
+objet2->accuse($personnage1) -> []
+objet3->accuse($personnage2) -> []
+
+
+$bancDesAccuses = [$personnage1, $personnage1, $personnage2]

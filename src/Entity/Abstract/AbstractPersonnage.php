@@ -9,6 +9,7 @@ abstract class AbstractPersonnage{
     protected bool $estReveille;
     protected AbstractPersonnage $enCouple;
     protected array $tabMorts = [];
+    protected array $bancsDesAccuses = [];
     // un tableau vide / a chaque fois qu'une personne 
     // meurt on appelle ce tableau
     // et on rajoute la personne qui est morte dedans
@@ -17,6 +18,11 @@ abstract class AbstractPersonnage{
     {
         $this->enVie = true;
         $this->estReveille = true;
+    }
+
+    public function getTabMort() : array
+    {
+        return $this->tabMorts;
     }
 
  
@@ -50,5 +56,13 @@ abstract class AbstractPersonnage{
         $this->enCouple = $abstractPersonnage;
 
         return $this;
+    }
+
+    protected function enVie() : bool
+    {
+        if($this->enVie === true){
+            return true;
+        }
+        return false;
     }
 }

@@ -24,7 +24,7 @@ class CupidonController extends AbstractController{
         if($personnage1->enVie and $personnage2->enVie){
             $personnage1->setEnCouple($personnage2);
             $personnage2->setEnCouple($personnage1);
-            return $personnage1->getName() . " et " . $personnage2->getName() . " sont mariés";
+            return print_r($personnage1->getName() . " et " . $personnage2->getName() . " sont mariés" . PHP_EOL);
         }
     }
 }

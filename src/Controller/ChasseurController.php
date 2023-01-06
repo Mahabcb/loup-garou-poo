@@ -4,25 +4,28 @@ namespace App\Controller;
 
 use Exception;
 use App\Entity\Chasseur;
+use App\Interface\KillerInterface;
 use App\Entity\Abstract\AbstractPersonnage;
 use App\Controller\Abstract\AbstractController;
 
-class ChasseurController extends AbstractController{
+class ChasseurController extends AbstractController implements KillerInterface{
 
     private $chasseur;
     public function __construct(Chasseur $chasseur)
     {
         $this->chasseur = $chasseur;
     }
-    
-    public function tuerParChasseur(AbstractPersonnage $vicime) : string
+
+    /**
+     * on vérifie que le chasseur est mort
+     */
+    public function tuer(AbstractPersonnage $victime)
     {
-        // on doit vérifier qu'il est mort
-        // il peut tuer que s'il est mort
-        if($this->enVie === false){
-            // on veut tuer la victime 
-            $vicime->enVie = false;
+        if($this->enVie() === false and $victime->enVie() === true and isset($victime)){
+            $this->cimetiere($victime);
         }
-        throw new Exception("Tu n'est pas mort, tu ne peux pas tuer quelqu'un !");
+        if($victime->getPartenaire() !== null){ 
+            return $this->tuerLePartenaire($victime);
+        }
     }
 }

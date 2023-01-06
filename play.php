@@ -1,10 +1,16 @@
 <?php
 
 use App\Entity\Cupidon;
+use App\Entity\LeMaire;
+use App\Entity\Voyante;
 use App\Entity\Chasseur;
+use App\Entity\LoupGarou;
 use App\Entity\LaSorciere;
 use App\Controller\CupidonController;
+use App\Controller\LeMaireController;
+use App\Controller\VoyanteController;
 use App\Controller\ChasseurController;
+use App\Controller\LoupGarouController;
 use App\Controller\LaSorciereController;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -14,31 +20,32 @@ $chasseurController = new ChasseurController($chasseur);
 
 $sorciere = new LaSorciere();
 $sorciereController = new LaSorciereController($sorciere);
-// début du jeu
+
 $cupidon = new Cupidon();
 $cupidonController = new CupidonController($cupidon);
 
-$sorciereController = new LaSorciereController($sorciere);
-$sorciereController->tuer();
+$loupGarou = new LoupGarou();
+$loupGarouController = new LoupGarouController($loupGarou);
 
-// debut : tout le monde est réveillé
-// on va voter pour le maire
-// tout le monde s'endort
-// les loup garou se réveillent
-// ils décident de tuer quelqu'un [mort1, mort2, mort3]
-// ils se rendorment
+$loupGarou2 = new LoupGarou();
+$loupGarouController2 = new LoupGarouController($loupGarou2);
 
-// cupidon se réveille
-// il va choisir deux personnes qui vont se marier
-// la petite fille qui voit
+$voyante = new Voyante();
+$voyanteController = new VoyanteController($voyante);
 
-// sorciere elle se réveille et décide de ranimer la personne morte ou pas
-// il faut récupérer la personne morte par les loup garou
-// que cette function lui permette de décider si elle résucite ou pas
-// elle se rendort
+$maire = new LeMaire();
+$maireController = new LeMaireController($maire);
 
-// on reveille tout le monde
-// on annonce les personnes décédées
-// on accuse les loup garou
+$chasseurController->dormir(); // a modifer
+
+$loupGarouController->seReveiller($loupGarou); // a modifer
+$loupGarouController2->seReveiller($loupGarou2); // a modifer
+
+$cupidonController->seReveiller($cupidon); // a modifer
+$cupidonController->marier($chasseur, $voyante); // a modifer
 
 
+
+$loupGarouController->tuer($chasseur); // a modifer
+
+dd($chasseur->getTabMort()); // a modifer
